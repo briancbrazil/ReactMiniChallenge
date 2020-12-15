@@ -1,5 +1,7 @@
 import React from "react";
 // TO DO: Create an App class component which renders FactsList
+import FactsList from './FactsList.jsx';
+import animalFacts from './data.jsx';
 
 // Before jumping into coding, check out the README for some reccomendations on the order to complete the challenge in and helpful hints
 class App extends React.Component {
@@ -7,7 +9,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      facts: "",
+      facts: animalFacts,
       favorite: "",
     };
   }
@@ -21,7 +23,7 @@ class App extends React.Component {
       <div className="main">
         <h1 className="heading">Welcome to Animal Facts!</h1>
         <h2 className="fave">My Favorite Animal: {}</h2>
-        <FactsList />
+        <FactsList facts = {this.state.facts} />
       </div>
     );
   }
